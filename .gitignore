@@ -1,0 +1,58 @@
+# Dependencies
+/node_modules
+/vendor
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+error_log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database
+*.sql
+*.sqlite
+*.db
+
+# Compiled files
+*.cache
+*.compiled
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Uploads directory (if you add file uploads)
+/uploads/*
+!/uploads/.gitkeep
+
+# Config overrides (for local development)
+config/local.php
+
+# Build files
+/dist
+/build
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+

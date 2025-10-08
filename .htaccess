@@ -1,0 +1,31 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Redirect to HTTPS (uncomment when SSL is configured)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Custom error pages
+ErrorDocument 404 /404.php
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Prevent directory browsing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "^(config\.php|\.env)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
